@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,198 +8,81 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <style>
         :root {
-            --primary-color: #FFC400;
-            --secondary-color: #FF9900;
-            --dark-color: #333;
-            --light-color: #FFF;
+            --primary-color: #212529;
+            --secondary-color: #343a40;
+            --accent-color: #495057;
         }
-
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #333;
-            color: #FFF;
+            background-color: #121212;
+            color: #fff;
         }
-
         .navbar {
             background: rgba(25, 20, 18, 0.85);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 1rem;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-
-        .navbar-brand {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        .nav-link {
-            color: #FFF;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-
-        .nav-link:hover {
-            color: var(--primary-color);
-        }
-
-        .cta-button {
-            background-color: var(--primary-color);
-            color: #FFF;
-            border: none;
-            padding: 0.5rem 1rem;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-
-        .cta-button:hover {
-            background-color: var(--secondary-color);
-        }
-
-        .hero-section {
-            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1600&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #FFF;
-        }
-
-        .hero-text {
-            font-size: 2rem;
-            font-weight: bold;
-            animation: fadeInUp 2s;
-        }
-
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(100px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .products-section {
-            padding: 2rem;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 1rem;
-        }
-
-        .product-card {
-            background-color: #444;
-            padding: 1rem;
-            border-radius: 10px;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            cursor: pointer;
-        }
-
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-        }
-
-        .product-image {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 10px;
+            z-index: 1000;
         }
-
-        .product-name {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-top: 1rem;
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
         }
-
-        .product-description {
-            font-size: 1rem;
-            color: #CCC;
-            margin-top: 0.5rem;
+        .navbar li {
+            margin-right: 20px;
         }
-
-        .pricing-table {
-            padding: 2rem;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 1rem;
-        }
-
-        .pricing-card {
-            background-color: #444;
-            padding: 1rem;
-            border-radius: 10px;
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            cursor: pointer;
         }
-
-        .pricing-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        .navbar a:hover {
+            color: #ccc;
         }
-
-        .pricing-plan {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-top: 1rem;
-        }
-
-        .pricing-price {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-top: 0.5rem;
-        }
-
-        .trainer-profiles {
-            padding: 2rem;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 1rem;
-        }
-
-        .trainer-card {
-            background-color: #444;
-            padding: 1rem;
+        .card {
+            background-color: var(--primary-color);
+            border: none;
             border-radius: 10px;
+            padding: 20px;
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            cursor: pointer;
         }
-
-        .trainer-card:hover {
+        .card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
-
-        .trainer-image {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 50%;
+        .btn {
+            background-color: var(--secondary-color);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
-
-        .trainer-name {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-top: 1rem;
+        .btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-8px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
-
-        .trainer-bio {
-            font-size: 1rem;
-            color: #CCC;
-            margin-top: 0.5rem;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .fade-in {
+            animation: fadeIn 2s;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar fixed-top">
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Iron Peak</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -207,76 +91,100 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#products">Products</a>
+                        <a class="nav-link" href="#">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact Us</a>
+                        <a class="nav-link" href="#">Contact</a>
                     </li>
                 </ul>
-                <button class="cta-button">Join Now</button>
             </div>
         </div>
     </nav>
-    <section class="hero-section" id="home">
-        <h1 class="hero-text">Welcome to Iron Peak</h1>
-    </section>
-    <section class="products-section" id="products">
-        <h2 class="text-center">Our Products</h2>
-        <div class="product-card">
-            <img class="product-image" src="https://images.unsplash.com/photo-151097252790b-af4f90267300?auto=format&fit=crop&w=600&q=80" alt="Espresso">
-            <h3 class="product-name">Espresso</h3>
-            <p class="product-description">Our signature espresso blend, made from the finest Arabica beans.</p>
+    <div class="container mt-5 pt-5">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3 text-center fade-in">
+                <h1 class="mb-3">Welcome to Iron Peak</h1>
+                <p class="mb-5">Get fit with our premium gym services</p>
+                <button class="btn">Join Now</button>
+            </div>
         </div>
-        <div class="product-card">
-            <img class="product-image" src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=600&q=80" alt="Cappuccino">
-            <h3 class="product-name">Cappuccino</h3>
-            <p class="product-description">A perfect blend of espresso, steamed milk, and foam.</p>
+        <div class="row mt-5">
+            <div class="col-lg-4">
+                <div class="card fade-in">
+                    <img src="https://images.unsplash.com/featured/800x600/?gym" alt="Gym" class="img-fluid">
+                    <h2 class="mb-3">Basic Plan</h2>
+                    <p class="mb-4">$29.99/month</p>
+                    <ul class="mb-5">
+                        <li>Access to gym equipment</li>
+                        <li>Group fitness classes</li>
+                    </ul>
+                    <button class="btn">Sign Up</button>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card fade-in">
+                    <img src="https://images.unsplash.com/featured/800x600/?personal-training" alt="Personal Training" class="img-fluid">
+                    <h2 class="mb-3">Premium Plan</h2>
+                    <p class="mb-4">$49.99/month</p>
+                    <ul class="mb-5">
+                        <li>Access to gym equipment</li>
+                        <li>Group fitness classes</li>
+                        <li>Personal training sessions</li>
+                    </ul>
+                    <button class="btn">Sign Up</button>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card fade-in">
+                    <img src="https://images.unsplash.com/featured/800x600/?nutrition" alt="Nutrition" class="img-fluid">
+                    <h2 class="mb-3">Elite Plan</h2>
+                    <p class="mb-4">$99.99/month</p>
+                    <ul class="mb-5">
+                        <li>Access to gym equipment</li>
+                        <li>Group fitness classes</li>
+                        <li>Personal training sessions</li>
+                        <li>Nutrition counseling</li>
+                    </ul>
+                    <button class="btn">Sign Up</button>
+                </div>
+            </div>
         </div>
-        <div class="product-card">
-            <img class="product-image" src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=600&q=80" alt="Cold Brew">
-            <h3 class="product-name">Cold Brew</h3>
-            <p class="product-description">Our cold brew coffee, made from the finest Arabica beans and steeped to perfection.</p>
+        <div class="row mt-5">
+            <div class="col-lg-6 offset-lg-3 text-center fade-in">
+                <h2 class="mb-5">Meet Our Trainers</h2>
+            </div>
         </div>
-    </section>
-    <section class="pricing-table">
-        <h2 class="text-center">Pricing Plans</h2>
-        <div class="pricing-card">
-            <h3 class="pricing-plan">Basic</h3>
-            <h4 class="pricing-price">$19.99/month</h4>
-            <p class="product-description">Access to our gym facilities and group classes.</p>
+        <div class="row mt-5">
+            <div class="col-lg-4">
+                <div class="card fade-in">
+                    <img src="https://images.unsplash.com/featured/800x600/?trainer1" alt="Trainer 1" class="img-fluid">
+                    <h2 class="mb-3">John Doe</h2>
+                    <p class="mb-4">Certified Personal Trainer</p>
+                    <p class="mb-5">Specializes in weightlifting and strength training</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card fade-in">
+                    <img src="https://images.unsplash.com/featured/800x600/?trainer2" alt="Trainer 2" class="img-fluid">
+                    <h2 class="mb-3">Jane Smith</h2>
+                    <p class="mb-4">Certified Group Fitness Instructor</p>
+                    <p class="mb-5">Specializes in yoga and Pilates</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card fade-in">
+                    <img src="https://images.unsplash.com/featured/800x600/?trainer3" alt="Trainer 3" class="img-fluid">
+                    <h2 class="mb-3">Bob Johnson</h2>
+                    <p class="mb-4">Certified Nutritionist</p>
+                    <p class="mb-5">Specializes in meal planning and nutrition counseling</p>
+                </div>
+            </div>
         </div>
-        <div class="pricing-card">
-            <h3 class="pricing-plan">Premium</h3>
-            <h4 class="pricing-price">$29.99/month</h4>
-            <p class="product-description">Access to our gym facilities, group classes, and personal training sessions.</p>
-        </div>
-        <div class="pricing-card">
-            <h3 class="pricing-plan">Elite</h3>
-            <h4 class="pricing-price">$49.99/month</h4>
-            <p class="product-description">Access to our gym facilities, group classes, personal training sessions, and nutrition counseling.</p>
-        </div>
-    </section>
-    <section class="trainer-profiles">
-        <h2 class="text-center">Meet Our Trainers</h2>
-        <div class="trainer-card">
-            <img class="trainer-image" src="https://images.unsplash.com/photo-1519713958759-1b34848c5ab5?auto=format&fit=crop&w=400&q=80" alt="Trainer 1">
-            <h3 class="trainer-name">John Doe</h3>
-            <p class="trainer-bio">Certified personal trainer with 5 years of experience.</p>
-        </div>
-        <div class="trainer-card">
-            <img class="trainer-image" src="https://images.unsplash.com/photo-1519713958759-1b34848c5ab5?auto=format&fit=crop&w=400&q=80" alt="Trainer 2">
-            <h3 class="trainer-name">Jane Smith</h3>
-            <p class="trainer-bio">Certified group fitness instructor with 3 years of experience.</p>
-        </div>
-        <div class="trainer-card">
-            <img class="trainer-image" src="https://images.unsplash.com/photo-1519713958759-1b34848c5ab5?auto=format&fit=crop&w=400&q=80" alt="Trainer 3">
-            <h3 class="trainer-name">Bob Johnson</h3>
-            <p class="trainer-bio">Certified strength and conditioning coach with 10 years of experience.</p>
-        </div>
-    </section>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
+```

@@ -4,174 +4,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iron Peak - Premium Fitness Gym</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Iron Peak Fitness</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <style>
-        /* Glassmorphism Navbar */
-        .glassmorphism {
-            background-color: rgba(255, 255, 255, 0.1);
+        .glassmorphism-navbar {
+            background: rgba(0,0,0,0.8);
             backdrop-filter: blur(10px);
-            padding: 10px;
-            border-radius: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1;
         }
-
-        /* Trainer Profile Cards */
-        .trainer-card {
-            transition: transform 0.2s ease-out;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        
+        .glassmorphism-navbar .navbar-nav {
+            justify-content: flex-end;
         }
-
-        .trainer-card:hover {
+        
+        .glassmorphism-navbar .nav-item {
+            margin-left: 20px;
+        }
+        
+        .card {
+            position: relative;
+            transition: all 0.5s ease;
+        }
+        
+        .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Pricing Table */
-        .pricing-table {
-            background-color: #333;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .pricing-table .plan {
-            padding: 10px;
-            background-color: #444;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
             border-radius: 10px;
         }
-
-        .pricing-table .plan:hover {
-            background-color: #555;
+        
+        .card:hover::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.2);
+            border-radius: 10px;
         }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light glassmorphism">
-        <div class="container-fluid">
+    <nav class="glassmorphism-navbar navbar navbar-expand-lg bg-dark py-3">
+        <div class="container">
+            <a class="navbar-brand text-white" href="#">Iron Peak Fitness</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                        <a class="nav-link text-white" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Trainers</a>
+                        <a class="nav-link text-white" href="#">Pricing</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link text-white" href="#">Trainers</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h1 class="display-4">Unlock Your Fitness Potential</h1>
-                    <p class="lead">At Iron Peak, we offer a premium fitness experience that will take your fitness journey to the next level.</p>
-                    <button class="btn btn-primary">Join Now</button>
-                </div>
-                <div class="col-lg-6">
-                    <img src="https://images.unsplash.com/featured/800x600/?fitness" alt="Fitness Image" class="w-100">
+    <main>
+        <section class="bg-light py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <img src="https://images.unsplash.com/featured/800x600/?fitness" alt="Fitness Image" class="img-fluid img-rounded">
+                    </div>
+                    <div class="col-md-6">
+                        <h1 class="display-4 text-dark mb-3">Welcome to Iron Peak Fitness</h1>
+                        <p class="text-muted">Get fit with our expert trainers and state-of-the-art equipment.</p>
+                        <button class="btn btn-primary">Join Now</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Trainer Profiles -->
-    <section class="trainers">
-        <div class="container">
-            <h2 class="mb-4">Meet Our Trainers</h2>
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="trainer-card">
-                        <div class="card" style="width: 100%;">
-                            <img src="https://images.unsplash.com/photo-1623434411444-5b9c4a4c1b5c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Trainer Image" class="card-img-top">
+        </section>
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://images.unsplash.com/photo-1563922447-3f2b1f4a8c6d" alt="Trainer Image" class="card-img-top img-rounded">
                             <div class="card-body">
-                                <h5 class="card-title">John Doe</h5>
-                                <p class="card-text">Personal Trainer</p>
+                                <h5 class="card-title text-dark">John Doe</h5>
+                                <p class="card-text text-muted">Personal Trainer</p>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="trainer-card">
-                        <div class="card" style="width: 100%;">
-                            <img src="https://images.unsplash.com/photo-1623434411444-5b9c4a4c1b5c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Trainer Image" class="card-img-top">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://images.unsplash.com/photo-1558646687-cf9c4b2f5e8f" alt="Trainer Image" class="card-img-top img-rounded">
                             <div class="card-body">
-                                <h5 class="card-title">Jane Doe</h5>
-                                <p class="card-text">Group Fitness Instructor</p>
+                                <h5 class="card-title text-dark">Jane Doe</h5>
+                                <p class="card-text text-muted">Group Fitness Instructor</p>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="trainer-card">
-                        <div class="card" style="width: 100%;">
-                            <img src="https://images.unsplash.com/photo-1623434411444-5b9c4a4c1b5c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Trainer Image" class="card-img-top">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://images.unsplash.com/photo-1604553516-ecdf7a9fe4a5" alt="Trainer Image" class="card-img-top img-rounded">
                             <div class="card-body">
-                                <h5 class="card-title">Bob Smith</h5>
-                                <p class="card-text">Personal Trainer</p>
+                                <h5 class="card-title text-dark">Bob Smith</h5>
+                                <p class="card-text text-muted">Nutrition Coach</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Pricing Table -->
-    <section class="pricing">
-        <div class="container">
-            <h2 class="mb-4">Our Pricing Plans</h2>
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="pricing-table">
-                        <div class="plan">
-                            <h2 class="mb-2">Basic</h2>
-                            <p class="mb-2">$29.99/month</p>
-                            <ul>
-                                <li>Basic features</li>
-                                <li> Limited access to trainers</li>
-                            </ul>
-                        </div>
+        </section>
+        <section class="bg-light py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1 class="display-4 text-dark mb-3">Pricing</h1>
+                        <p class="text-muted">Our pricing plans are designed to fit your fitness goals and budget.</p>
                     </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="pricing-table">
-                        <div class="plan">
-                            <h2 class="mb-2">Premium</h2>
-                            <p class="mb-2">$49.99/month</p>
-                            <ul>
-                                <li>Advanced features</li>
-                                <li>Unlimited access to trainers</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="pricing-table">
-                        <div class="plan">
-                            <h2 class="mb-2">Elite</h2>
-                            <p class="mb-2">$99.99/month</p>
-                            <ul>
-                                <li>Exclusive features</li>
-                                <li>Personalized training sessions</li>
-                            </ul>
+                    <div class="col-md-6">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Plan</th>
+                                        <th>Price</th>
+                                        <th>Features</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Basic</td>
+                                        <td>$29.99/month</td>
+                                        <td>Access to basic equipment and classes</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pro</td>
+                                        <td>$49.99/month</td>
+                                        <td>Access to all equipment and classes, personal training sessions</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Premium</td>
+                                        <td>$99.99/month</td>
+                                        <td>Access to all equipment and classes, personal training sessions, nutrition coaching</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
 ```

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffee Shop</title>
+    <title>Coffee Shop Landing Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,9 +16,6 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
         .header {
             background-color: #1a1a1a;
@@ -31,48 +28,44 @@
         }
         .header p {
             font-size: 18px;
-            margin-bottom: 20px;
         }
         .content {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
-        .content h2 {
+        .card {
+            background-color: #1a1a1a;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: calc(33.33% - 20px);
+        }
+        .card h2 {
             font-size: 24px;
             margin-bottom: 10px;
         }
-        .content p {
-            font-size: 18px;
-            margin-bottom: 20px;
+        .card p {
+            font-size: 16px;
         }
-        .call-to-action {
-            background-color: #ff9900;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        .footer {
+            background-color: #1a1a1a;
+            padding: 20px;
+            text-align: center;
+            clear: both;
         }
-        .call-to-action:hover {
-            background-color: #ffa07a;
+        .footer p {
+            font-size: 14px;
         }
         @media only screen and (max-width: 768px) {
-            .container {
-                padding: 10px;
+            .card {
+                width: calc(50% - 20px);
             }
-            .header h1 {
-                font-size: 24px;
-            }
-            .header p {
-                font-size: 14px;
-            }
-            .content h2 {
-                font-size: 18px;
-            }
-            .content p {
-                font-size: 14px;
+        }
+        @media only screen and (max-width: 480px) {
+            .card {
+                width: 100%;
             }
         }
     </style>
@@ -84,9 +77,21 @@
             <p>Experience the best coffee in town</p>
         </div>
         <div class="content">
-            <h2>Our Story</h2>
-            <p>We are a team of coffee lovers who are passionate about serving the best coffee in town. Our coffee is made from high-quality beans and is roasted to perfection.</p>
-            <button class="call-to-action">Visit Us Today</button>
+            <div class="card">
+                <h2>Coffee</h2>
+                <p>We source our coffee beans from the finest suppliers to ensure the best taste and quality.</p>
+            </div>
+            <div class="card">
+                <h2>Food</h2>
+                <p>Our menu includes a variety of delicious pastries, sandwiches, and salads to complement your coffee.</p>
+            </div>
+            <div class="card">
+                <h2>Atmosphere</h2>
+                <p>Our cozy and modern shop is the perfect place to relax and enjoy your favorite coffee and food.</p>
+            </div>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 Coffee Shop. All rights reserved.</p>
         </div>
     </div>
 </body>
